@@ -2,16 +2,18 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Fotografer;
 use Illuminate\Http\Request;
 
-class Foto extends Controller
+class FotograferController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        //
+        $fotografer = Fotografer::all();
+    return view('fotografer.index', compact('fotografer'));
     }
 
     /**
@@ -19,7 +21,7 @@ class Foto extends Controller
      */
     public function create()
     {
-        //
+        return view('fotografer.create');
     }
 
     /**
@@ -27,7 +29,9 @@ class Foto extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate(['nama_fotografer' => 'required']);
+        Fotografer::create($request->all());
+        return redirect()->route('fotografer.index');
     }
 
     /**
@@ -43,7 +47,8 @@ class Foto extends Controller
      */
     public function edit(string $id)
     {
-        //
+         $fotografer = Fotografer::findOrFail($id);
+        return view('fotografer.create', compact('fotografer'));
     }
 
     /**
@@ -51,7 +56,9 @@ class Foto extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $fotografer = Fotografer::findOrFail($id);
+        $fotografer->update($request->all());
+        return redirect()->route('fotografer.index');
     }
 
     /**
@@ -59,6 +66,7 @@ class Foto extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        Fotografer::destroy($id);
+        return redirect()->route('fotografer.index');
     }
 }

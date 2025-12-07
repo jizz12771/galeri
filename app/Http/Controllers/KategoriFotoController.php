@@ -2,16 +2,18 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Kategori_Foto;
 use Illuminate\Http\Request;
 
-class Fotografer extends Controller
+class KategoriFotoController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        //
+        $kategori = Kategori_Foto::all();
+        return view('kategori.index', compact('kategori'));
     }
 
     /**
@@ -19,7 +21,7 @@ class Fotografer extends Controller
      */
     public function create()
     {
-        //
+          return view('kategori.create');
     }
 
     /**
@@ -27,7 +29,12 @@ class Fotografer extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'nama_kategori' => 'required'
+        ]);
+
+        Kategori_Foto::create($request->all());
+        return redirect()->route('kategori_foto.index');
     }
 
     /**
@@ -35,7 +42,7 @@ class Fotografer extends Controller
      */
     public function show(string $id)
     {
-        //
+
     }
 
     /**
@@ -43,7 +50,9 @@ class Fotografer extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $kategori = Kategori_Foto::findOrFail($id);
+        return view('kategori.edit', compact('kategori'));$kategori = Kategori_Foto::findOrFail($id);
+        return view('kategori.edit', compact('kategori'));
     }
 
     /**
@@ -51,7 +60,10 @@ class Fotografer extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+         $kategori = Kategori_Foto::findOrFail($id);
+        $kategori->update($request->all());
+
+        return redirect()->route('kategori_foto.index');
     }
 
     /**
@@ -59,6 +71,8 @@ class Fotografer extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        Kategori_Foto::destroy($id);
+        return redirect()->route('kategori_foto.index');
+
     }
 }
