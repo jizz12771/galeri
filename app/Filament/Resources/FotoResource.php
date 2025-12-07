@@ -31,6 +31,7 @@ class FotoResource extends Resource
             TextInput::make('judul')
                 ->required(),
             FileUpload::make('file_path')
+                ->disk('public')
                 ->directory('foto')
                 ->image()
                 ->required(),
@@ -48,7 +49,10 @@ class FotoResource extends Resource
         return $table
             ->columns([
             TextColumn::make('judul')->searchable(),
-            ImageColumn::make('file_path'),
+            ImageColumn::make('file_path')
+                    ->disk('public')      // wajib
+                    ->visibility('public')
+                    ->label('Foto'),
             TextColumn::make('kategori.nama_kategori'),
             TextColumn::make('fotografer.nama_fotografer'),
             TextColumn::make('created_at')->dateTime(),
