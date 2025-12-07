@@ -17,15 +17,24 @@
     </div>
 
     @unless(count($kategori))
+<<<<<<< HEAD
         <p class="text-cyan-300 text-lg">Belum ada kategori.</p>
+=======
+        <p class="text-gray-200 text-lg">Belum ada kategori.</p>
+>>>>>>> a68c95a2ee154f4772bba76afbb7436ec1dbb284
     @else
 
     <div class="bg-white/10 backdrop-blur-md rounded-2xl shadow-2xl overflow-hidden">
         <table class="w-full text-left text-white">
             <thead>
                 <tr class="bg-white/10 border-b border-white/20">
+<<<<<<< HEAD
                     <th class="p-4 text-cyan-300 font-semibold">ID</th>
                     <th class="p-4 text-cyan-300 font-semibold">Nama Kategori</th>
+=======
+                    <th class="p-4 text-gray-900 font-semibold">ID</th>
+                    <th class="p-4 text-gray-900 font-semibold">Nama Kategori</th>
+>>>>>>> a68c95a2ee154f4772bba76afbb7436ec1dbb284
                     <th class="p-4 font-semibold">Aksi</th>
                 </tr>
             </thead>
@@ -33,8 +42,13 @@
             <tbody>
                 @foreach($kategori as $item)
                 <tr class="border-b border-white/10 hover:bg-white/5 transition">
+<<<<<<< HEAD
                     <td class="p-4 text-cyan-300 ">{{ $item->id }}</td>
                     <td class="p-4 text-cyan-300 ">{{ $item->nama_kategori }}</td>
+=======
+                    <td class="p-4 text-gray-900 ">{{ $item->id }}</td>
+                    <td class="p-4 text-gray-900 ">{{ $item->nama_kategori }}</td>
+>>>>>>> a68c95a2ee154f4772bba76afbb7436ec1dbb284
 
                     <td class="p-4 flex gap-5">
 

@@ -11,22 +11,36 @@
             @csrf
 
             <div class="mb-4">
+<<<<<<< HEAD
                 <label class="block text-sm text-gray mb-1">Judul</label>
                 <input type="text" name="judul" value="{{ old('judul') }}"
                        class="w-full px-3 py-2 rounded-md bg-white/20 text-cyan-300 focus:outline-none" />
+=======
+                <label class="block text-sm text-white mb-1">Judul</label>
+                <input type="text" name="judul" value="{{ old('judul') }}"
+                       class="w-full px-3 py-2 rounded-md bg-white/20 text-white focus:outline-none" />
+>>>>>>> a68c95a2ee154f4772bba76afbb7436ec1dbb284
                 @error('judul') <p class="text-red-400 text-sm mt-1">{{ $message }}</p> @enderror
             </div>
 
             <div class="mb-4">
                 <label class="block text-sm text-white mb-1">Foto</label>
                 <input type="file" name="file_path" accept="image/*"
+<<<<<<< HEAD
                        class="w-full px-3 py-2 rounded-md bg-cyan/10 text-cyan-300" />
+=======
+                       class="w-full px-3 py-2 rounded-md bg-white/10 text-white" />
+>>>>>>> a68c95a2ee154f4772bba76afbb7436ec1dbb284
                 @error('file_path') <p class="text-red-400 text-sm mt-1">{{ $message }}</p> @enderror
             </div>
 
             <div class="mb-4">
                 <label class="block text-sm text-white mb-1">Kategori</label>
+<<<<<<< HEAD
                 <select name="kategori_id" class="w-full px-3 py-2 rounded-md bg-white/10 text-cyan-300">
+=======
+                <select name="kategori_id" class="w-full px-3 py-2 rounded-md bg-white/10 text-white">
+>>>>>>> a68c95a2ee154f4772bba76afbb7436ec1dbb284
                     <option value="">-- Pilih Kategori --</option>
                     @foreach($kategori as $k)
                         <option value="{{ $k->id }}" @selected(old('kategori_id') == $k->id)>{{ $k->nama_kategori }}</option>
@@ -36,8 +50,13 @@
             </div>
 
             <div class="mb-6">
+<<<<<<< HEAD
                 <label class="block text-sm text-cyan-300 mb-1">Fotografer</label>
                 <select name="fotografer_id" class="w-full px-3 py-2 rounded-md bg-white/10 text-cyan-300">
+=======
+                <label class="block text-sm text-white mb-1">Fotografer</label>
+                <select name="fotografer_id" class="w-full px-3 py-2 rounded-md bg-white/10 text-white">
+>>>>>>> a68c95a2ee154f4772bba76afbb7436ec1dbb284
                     <option value="">-- Pilih Fotografer --</option>
                     @foreach($fotografer as $f)
                         <option value="{{ $f->id }}" @selected(old('fotografer_id') == $f->id)>{{ $f->nama_fotografer }}</option>

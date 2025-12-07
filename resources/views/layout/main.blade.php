@@ -4,16 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@yield('title') | Galeri Foto</title>
+<<<<<<< HEAD
     <script src="https://cdn.tailwindcss.com"></script>
+=======
+     <script src="https://cdn.tailwindcss.com"></script>
+>>>>>>> a68c95a2ee154f4772bba76afbb7436ec1dbb284
 </head>
 
 <body class="relative text-gray-100 min-h-screen">
 
+<<<<<<< HEAD
     <!-- BACKGROUND GAMBAR FIXED -->
     <div class="fixed inset-0 -z-10">
         <img src="{{ asset('22.jpg') }}"
              alt="Background"
              class="w-full h-full object-cover">
+=======
+    <!-- BACKGROUND GAMBAR -->
+    <div class="absolute inset-0 -z-10">
+        <img src="{{ asset('22.jpg') }}"
+             alt="Background">
+        <div></div>
+>>>>>>> a68c95a2ee154f4772bba76afbb7436ec1dbb284
     </div>
 
     <!-- NAVBAR -->
